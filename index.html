@@ -1,67 +1,475 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#172b43"><title>NUZI × MATTHEW | Exam Arena</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b14">
+<title>NUZI × MATTHEW | Exam Arena</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
 <style>
-:root{--navy:#070b14;--navy2:#0e1728;--gold:#4d8dff;--gold2:#a7ccff;--cream:#080d18;--paper:#101a2b;--ink:#edf4ff;--muted:#a5b4ca;--green:#42c98b;--red:#ff6d83;--line:#233651;--shadow:0 18px 50px #0008;--blue:#1769ff;--blue2:#4b91ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#153b7b 0,transparent 42%),radial-gradient(circle at 90% 45%,#0b2346 0,transparent 32%),var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
-.wrap{width:min(1080px,100%);margin:auto;padding:20px 16px 46px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 2px 20px;flex-wrap:wrap}.brand{font-weight:1000;color:#fff;letter-spacing:1px;font-size:clamp(22px,4vw,30px);text-shadow:0 0 22px #1769ff55}.brand span{color:var(--blue2)}.brand .small{color:#a9c7ff;letter-spacing:3px;margin-top:3px}.seal{width:48px;height:48px;border:1px solid #4386ff;border-radius:16px;display:grid;place-items:center;color:#8bb7ff;font-size:25px;background:#112344;box-shadow:0 0 24px #1769ff30}
-.navlinks{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.navlinks a{color:#dce8ff;text-decoration:none;border:1px solid #2a4265;background:#0d192b;padding:9px 12px;border-radius:11px;font-size:13px;font-weight:bold}.navlinks a:hover{background:#173a70;border-color:#4b91ff}.hero{text-align:center;padding:clamp(25px,5vw,52px) clamp(16px,4vw,42px);position:relative;overflow:hidden;background:linear-gradient(145deg,#101b2e,#080e19 72%);border:1px solid #29466f;box-shadow:0 22px 70px #0007,inset 0 1px #ffffff0a}.hero:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#1769ff1c;filter:blur(10px);top:-160px;right:-80px;pointer-events:none}.hero:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:#1769ff12;filter:blur(10px);bottom:-150px;left:-70px;pointer-events:none}.eyebrow{display:inline-block;color:#a8caff;border:1px solid #315d9b;background:#102342;border-radius:99px;padding:8px 15px;font-size:12px;font-weight:bold;letter-spacing:.3px}.cross{font-size:44px;color:#5c9aff;margin:12px 0 2px;text-shadow:0 0 24px #1769ff70}h1{font-size:clamp(30px,6vw,54px);color:#fff;margin:12px 0;line-height:1.35;text-shadow:0 0 30px #1769ff2b}h2{color:#a8caff;margin-top:0}p{line-height:1.9}.sub{color:#b2c1d7;max-width:660px;margin:12px auto}.card{background:linear-gradient(145deg,#101a2b,#0b1220);border:1px solid var(--line);border-radius:24px;padding:clamp(18px,4vw,32px);margin:16px 0;box-shadow:var(--shadow)}.welcome-verse{border:1px solid #274775;border-right:4px solid var(--blue2);background:#0d1b30;padding:15px 18px;border-radius:14px;color:#d1e2ff;line-height:2;margin:22px auto;max-width:720px}.btn{border:1px solid #315078;border-radius:13px;background:#101e32;color:#eaf2ff;padding:13px 18px;font:inherit;font-weight:bold;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #1769ff28;border-color:#5796ff}.btn.primary{background:linear-gradient(135deg,#2678ff,#1050d9);border-color:#4c8fff;color:#fff;box-shadow:0 8px 25px #1769ff35}.btn.gold{background:linear-gradient(135deg,#4d91ff,#1558df);color:white;border:1px solid #78adff;box-shadow:0 10px 30px #1769ff42;padding:15px 24px;font-size:17px}.btn:disabled{opacity:.4;cursor:not-allowed}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.hidden{display:none!important}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-weight:bold;font-size:14px;color:#c5d9ff}input,select{width:100%;border:1px solid #2a4261;background:#080f1c;border-radius:12px;padding:13px;font:inherit;color:var(--ink);outline:none}input:focus,select:focus{border-color:#4b91ff;box-shadow:0 0 0 3px #1769ff28}.notice{font-size:12px;color:#93a6c1}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#a5b9d7;font-size:13px}.progress{height:8px;background:#1a2b43;border-radius:99px;overflow:hidden;margin:14px 0 22px}.progress>div{height:100%;background:linear-gradient(90deg,#1769ff,#77b0ff);width:0;transition:width .25s;box-shadow:0 0 15px #1769ff80}.qtitle{font-size:21px;line-height:1.8;color:#f2f7ff;margin:14px 0 20px}.opts{display:grid;gap:10px}.option{width:100%;text-align:right;border:1px solid #2a4261;border-radius:14px;background:#0c1626;color:#eaf2ff;padding:14px;font:inherit;cursor:pointer;line-height:1.7;transition:.15s}.option:hover{border-color:#4b91ff;background:#112342}.option.chosen{border-color:#4b91ff;background:#102d57;box-shadow:inset 0 0 0 1px #4b91ff44}.option.correct{border-color:var(--green);background:#0e3028}.option.wrong{border-color:var(--red);background:#351824}.feedback{margin-top:14px;border-radius:12px;padding:12px 14px;line-height:1.9;background:#14233a}.result-number{font-size:48px;font-weight:900;color:#70a9ff}.result-badge{display:inline-block;border-radius:99px;padding:7px 14px;background:#10352c;color:#66e2ac;font-weight:bold}.review-item{padding:14px 0;border-bottom:1px solid var(--line);line-height:1.9}.certificate{border:7px double #4386ff;padding:24px;text-align:center;background:linear-gradient(135deg,#f8fbff,#e6efff);color:#152744;border-radius:14px;margin-top:22px}.certificate h2{font-size:30px;color:#1756bd}.cert-name{font-size:27px;font-weight:bold;color:#102a50;margin:12px}.adminlink{display:block;text-align:center;color:#7085a4;font-size:12px;text-decoration:underline;margin:28px auto 0;cursor:pointer}.footer{text-align:center;color:#7085a4;font-size:12px;margin-top:25px}.status{padding:12px;border-radius:12px;margin:12px 0;background:#122441;color:#cfe0ff;line-height:1.7}.status.error{background:#351824;color:#ffb5c0}.status.good{background:#10352c;color:#8af0bf}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}th{background:#14243a;color:#bcd5ff}.small{font-size:12px;color:var(--muted)}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.feature{border:1px solid #233e62;background:#0c1728;border-radius:16px;padding:16px;text-align:center}.feature strong{display:block;color:#91baff;margin-bottom:5px}.feature span{color:#a9b9d0;font-size:13px;line-height:1.8}.section-title{text-align:center;margin:0 0 12px}.info-card{scroll-margin-top:20px}.hero .actions,.hero .notice,.hero .feature-grid{position:relative;z-index:1}
-@media(max-width:680px){.top{align-items:flex-start}.navlinks{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks a{text-align:center}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding-top:28px}.qtitle{font-size:19px}.card{border-radius:18px}.result-number{font-size:40px}.feature-grid{grid-template-columns:1fr}.seal{margin-right:auto}}
-@media print{body{background:white;color:#111}.wrap>*:not(#result){display:none!important}#result{display:block!important;background:white!important;color:#111!important;border:0!important;box-shadow:none!important}#result>*:not(#certificate){display:none!important}#result #certificate{display:block!important;visibility:visible!important}.certificate{break-inside:avoid;box-shadow:none!important}}
-</style></head><body><div class="wrap">
-<header class="top"><div class="brand">NUZI <span>×</span> MATTHEW <div class="small">EXAM ARENA</div></div><nav class="navlinks" aria-label="التنقل الرئيسي"><a href="#home">الرئيسية</a><a href="#instructions">تعليمات الامتحان</a><a href="#about">عن المنصة</a><a href="#home" id="navBegin">⚡ ابدأ التحدي</a></nav><div class="seal" aria-hidden="true">✝</div></header>
-<section id="home" class="card hero"><div class="eyebrow">منصة المراجعة والتقييم · إصدار NUZI</div><div class="cross">✦</div><h1>أهلاً بيك في ساحة التحدي!</h1><h2>باسم الآب والابن والروح القدس</h2><p class="sub">ركّز، فكّر، جاوب، وخلّي نتيجتك تتكلم عنك.</p><div class="welcome-verse">«الوحدة الأولى: دعوة الله لنا»<br>استعد للتحدي، اقرأ كل سؤال بهدوء، واختار الإجابة اللي تعبّر عن فهمك. كل سؤال فرصة تثبت فيها مستواك!</div><div class="actions"><button class="btn gold" id="beginBtn">⚡ يلا نبدأ التحدي!</button></div><p class="notice">30 سؤالًا · الصف الثالث الإعدادي · الفصل الدراسي الأول 2026–2027</p><div class="feature-grid"><div class="feature"><strong>🎯 تحدّي نفسك</strong><span>أسئلة متنوعة تقيس فهمك</span></div><div class="feature"><strong>📈 تابع تقدّمك</strong><span>شريط تقدّم واضح أثناء الحل</span></div><div class="feature"><strong>🏆 اعرف نتيجتك</strong><span>نتيجة ومراجعة بعد الانتهاء</span></div></div><div class="feature-grid"><div id="instructions" class="feature info-card"><strong>📋 تعليمات الامتحان</strong><span>اكتب اسمك وفصلك أولًا، ثم أجب عن كل الأسئلة. يمكنك الرجوع للسؤال السابق قبل إنهاء الامتحان.</span></div><div id="about" class="feature info-card"><strong>💙 عن NUZI × MATTHEW</strong><span>مساحة تعليمية للمراجعة والتقييم، بتجربة واضحة تساعدك تعرف مستواك وتراجع أخطاءك.</span></div><div class="feature"><strong>✝ الوحدة الأولى</strong><span>دعوة الله لنا · تربية دينية مسيحية</span></div></div></section>
-<section id="student" class="card hidden"><h2>أولًا: بيانات الطالب</h2><p class="small">اكتب بياناتك قبل بدء الامتحان. ستظهر هذه البيانات في النتيجة والشهادة.</p><form id="studentForm" class="formgrid"><div class="field full"><label for="studentName">اسم الطالب بالكامل *</label><input id="studentName" required maxlength="100" autocomplete="name" placeholder="اكتب الاسم رباعيًّا"></div><div class="field"><label for="studentClass">الفصل *</label><input id="studentClass" required maxlength="40" placeholder="مثال: 3/أ"></div><div class="field"><label for="studentCode">رقم الطالب (اختياري)</label><input id="studentCode" maxlength="40" placeholder="إن وجد"></div><div class="field full"><label><input id="privacyAgree" type="checkbox" required style="width:auto;margin-left:8px"> أوافق على حفظ بيانات الامتحان لإظهار النتيجة ومراجعة الأخطاء.</label></div><div class="field full actions"><button class="btn primary" type="submit">دخول الامتحان ←</button></div></form></section>
-<section id="quiz" class="card hidden"><div class="qhead"><span id="quizLabel">امتحان الوحدة الأولى</span><span id="counter">السؤال 1 من 30</span></div><div class="progress"><div id="progressBar"></div></div><div id="questionArea"></div><div class="actions" style="justify-content:space-between;margin-top:22px"><button class="btn" id="prevBtn">السابق</button><button class="btn primary" id="nextBtn" disabled>السؤال التالي</button></div><p class="notice">اختيارك بيتسجل على الجهاز أثناء الحل. مش هتظهر الإجابة الصحيحة إلا بعد إنهاء الامتحان.</p></section>
-<section id="result" class="card hidden"><h2>نتيجة الامتحان</h2><div class="result-number" id="scoreText">0 / 30</div><p id="resultSummary"></p><div id="saveStatus" class="status">جاري حفظ النتيجة…</div><div class="actions result-actions"><button class="btn primary" id="reviewBtn">راجع إجاباتك</button><button class="btn" id="printBtn">طباعة الشهادة</button><button class="btn" id="newExamBtn">امتحان جديد</button></div><div id="certificate" class="certificate hidden"><div class="cross">✝</div><div class="eyebrow">NUZI × MATTHEW EXAM ARENA</div><h2>شهادة اجتياز</h2><p>تشهد منصة الامتحانات بأن الطالب/ة</p><div id="certName" class="cert-name"></div><p>قد اجتاز امتحان التربية الدينية المسيحية<br>الصف الثالث الإعدادي · الوحدة الأولى «دعوة الله لنا»</p><h2 id="certScore"></h2><p id="certDate" class="small"></p><p style="color:#8b6b36">«ينبغي أن يطاع الله أكثر من الناس» (أع 5: 29)</p></div><div id="reviewArea" class="hidden" style="margin-top:24px"><h2>مراجعة الإجابات والأخطاء</h2><div id="reviewList"></div></div></section>
-<section id="admin" class="card hidden"><h2>لوحة النتائج الخاصة</h2><p class="small">هذه اللوحة مخصصة للمشرف فقط. سجّل الدخول بحساب المشرف الذي أنشأته في Supabase.</p><form id="loginForm" class="formgrid"><div class="field"><label>الإيميل</label><input id="adminEmail" type="email" required autocomplete="username"></div><div class="field"><label>كلمة المرور</label><input id="adminPassword" type="password" required autocomplete="current-password"></div><div class="field full actions"><button class="btn primary" type="submit">تسجيل الدخول</button><button class="btn" type="button" id="backHome">رجوع</button></div></form><div id="adminMessage" class="status hidden"></div><div id="adminContent" class="hidden"><div class="actions" style="justify-content:space-between"><p id="resultCount"></p><button class="btn" id="refreshResults">تحديث النتائج</button><button class="btn" id="logoutBtn">تسجيل الخروج</button></div><div class="tablewrap"><table><thead><tr><th>الطالب</th><th>الفصل</th><th>الدرجة</th><th>التاريخ</th><th>الأخطاء</th></tr></thead><tbody id="resultsBody"></tbody></table></div></div></section>
-<a class="adminlink" id="adminLink">دخول المشرف</a><div class="footer">NUZI × MATTHEW · Exam Arena · الوحدة الأولى فقط</div></div>
+:root {
+  --bg:#080d18; --card:#101a2b; --line:#233651;
+  --blue:#2678ff; --text:#edf4ff; --muted:#a5b4ca;
+  --green:#42c98b; --red:#ff6d83;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#153b7b,#080d18 55%);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+.wrap{max-width:1000px;margin:auto;padding:18px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 0 22px}
+.brand{font-weight:900;font-size:25px;color:white}
+.brand span{color:#70a9ff}
+.brand small{display:block;color:#a9c7ff;letter-spacing:3px;font-size:12px}
+.seal{font-size:30px;color:#70a9ff;border:1px solid #4386ff;border-radius:14px;padding:8px 14px}
+.card{background:linear-gradient(145deg,#101a2b,#0b1220);border:1px solid var(--line);border-radius:20px;padding:24px;margin:16px 0;box-shadow:0 18px 50px #0007}
+.hero{text-align:center;padding:40px 20px}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.4}
+h2{color:#a8caff}
+p{line-height:1.9}
+.sub,.small,.notice{color:var(--muted)}
+.verse{background:#0d1b30;border-right:4px solid #4b91ff;border-radius:12px;padding:14px;margin:20px 0}
+.btn{border:1px solid #315078;border-radius:12px;background:#101e32;color:white;padding:13px 18px;font:inherit;font-weight:bold;cursor:pointer}
+.btn.primary{background:linear-gradient(135deg,#2678ff,#1050d9)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.hidden{display:none!important}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+label{font-weight:bold}
+input,select{width:100%;border:1px solid #2a4261;background:#080f1c;border-radius:10px;padding:13px;color:white;font:inherit}
+.progress{height:8px;background:#1a2b43;border-radius:20px;overflow:hidden;margin:16px 0}
+.progress div{height:100%;background:#4b91ff;width:0}
+.qtitle{font-size:21px;line-height:1.9;margin:18px 0}
+.opts{display:grid;gap:10px}
+.option{width:100%;text-align:right;border:1px solid #2a4261;border-radius:12px;background:#0c1626;color:white;padding:14px;font:inherit;cursor:pointer;line-height:1.8}
+.option.chosen{border-color:#4b91ff;background:#102d57}
+.result-number{font-size:44px;font-weight:900;color:#70a9ff}
+.status{padding:12px;border-radius:10px;margin:12px 0;line-height:1.8;background:#122441}
+.status.error{background:#351824;color:#ffb5c0}
+.status.good{background:#10352c;color:#8af0bf}
+.review-item{padding:14px 0;border-bottom:1px solid var(--line);line-height:1.9}
+.certificate{background:#edf3ff;color:#152744;padding:22px;text-align:center;border:6px double #4386ff;border-radius:12px;margin-top:20px}
+.certificate h2{color:#1756bd}
+.tablewrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:10px;border-bottom:1px solid var(--line);text-align:right}
+.adminlink{display:block;text-align:center;color:#8298b8;margin:28px;cursor:pointer}
+@media(max-width:600px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.card{padding:17px}.qtitle{font-size:18px}}
+@media print{body{background:white}.wrap>*:not(#result){display:none!important}#result{display:block!important;background:white;color:#111;border:0;box-shadow:none}#result>*:not(#certificate){display:none!important}#certificate{display:block!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">NUZI <span>×</span> MATTHEW
+    <small>EXAM ARENA</small>
+  </div>
+  <div class="seal">✝</div>
+</header>
+
+<section id="home" class="card hero">
+  <p>منصة المراجعة والتقييم · إصدار NUZI</p>
+  <h1>أهلاً بيك في ساحة التحدي!</h1>
+  <h2>باسم الآب والابن والروح القدس</h2>
+  <p>ركّز، فكّر، جاوب، وخلّي نتيجتك تتكلم عنك.</p>
+  <div class="verse">الوحدة الأولى: دعوة الله لنا<br>الصف الثالث الإعدادي · التربية الدينية المسيحية</div>
+  <button class="btn primary" id="beginBtn">⚡ يلا نبدأ التحدي!</button>
+  <p class="notice">30 سؤالًا · الفصل الدراسي الأول 2026–2027</p>
+</section>
+
+<section id="student" class="card hidden">
+  <h2>بيانات الطالب</h2>
+  <form id="studentForm" class="formgrid">
+    <div class="field full">
+      <label for="studentName">اسم الطالب بالكامل *</label>
+      <input id="studentName" required maxlength="100">
+    </div>
+    <div class="field">
+      <label for="studentClass">الفصل *</label>
+      <input id="studentClass" required maxlength="40">
+    </div>
+    <div class="field">
+      <label for="studentCode">رقم الطالب (اختياري)</label>
+      <input id="studentCode" maxlength="40">
+    </div>
+    <div class="field full">
+      <label><input id="privacyAgree" type="checkbox" required style="width:auto">
+      أوافق على حفظ بيانات الامتحان لإظهار النتيجة ومراجعة الأخطاء.</label>
+    </div>
+    <div class="field full actions">
+      <button class="btn primary" type="submit">دخول الامتحان ←</button>
+    </div>
+  </form>
+</section>
+
+<section id="quiz" class="card hidden">
+  <div style="display:flex;justify-content:space-between;gap:10px">
+    <span id="quizLabel">امتحان الوحدة الأولى</span>
+    <span id="counter"></span>
+  </div>
+  <div class="progress"><div id="progressBar"></div></div>
+  <div id="questionArea"></div>
+  <div class="actions" style="justify-content:space-between">
+    <button class="btn" id="prevBtn">السابق</button>
+    <button class="btn primary" id="nextBtn" disabled>السؤال التالي</button>
+  </div>
+</section>
+
+<section id="result" class="card hidden">
+  <h2>نتيجة الامتحان</h2>
+  <div id="scoreText" class="result-number"></div>
+  <p id="resultSummary"></p>
+  <div id="saveStatus" class="status">جاري حفظ النتيجة…</div>
+  <div class="actions">
+    <button class="btn primary" id="reviewBtn">راجع إجاباتك</button>
+    <button class="btn" id="printBtn">طباعة الشهادة</button>
+    <button class="btn" id="newExamBtn">امتحان جديد</button>
+  </div>
+  <div id="certificate" class="certificate hidden">
+    <h2>شهادة اجتياز</h2>
+    <p>تشهد منصة NUZI × MATTHEW بأن الطالب/ة</p>
+    <div id="certName"></div>
+    <p>قد اجتاز امتحان التربية الدينية المسيحية<br>الصف الثالث الإعدادي · الوحدة الأولى</p>
+    <h2 id="certScore"></h2>
+    <p id="certDate"></p>
+  </div>
+  <div id="reviewArea" class="hidden">
+    <h2>مراجعة الإجابات</h2>
+    <div id="reviewList"></div>
+  </div>
+</section>
+
+<section id="admin" class="card hidden">
+  <h2>لوحة النتائج الخاصة</h2>
+  <form id="loginForm" class="formgrid">
+    <div class="field">
+      <label for="adminEmail">الإيميل</label>
+      <input id="adminEmail" type="email" required>
+    </div>
+    <div class="field">
+      <label for="adminPassword">كلمة المرور</label>
+      <input id="adminPassword" type="password" required>
+    </div>
+    <div class="field full actions">
+      <button class="btn primary" type="submit">تسجيل الدخول</button>
+      <button class="btn" type="button" id="backHome">رجوع</button>
+    </div>
+  </form>
+  <div id="adminMessage" class="status hidden"></div>
+  <div id="adminContent" class="hidden">
+    <p id="resultCount"></p>
+    <div class="actions">
+      <button class="btn" id="refreshResults">تحديث النتائج</button>
+      <button class="btn" id="logoutBtn">تسجيل الخروج</button>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>الطالب</th><th>الفصل</th><th>الدرجة</th><th>التاريخ</th></tr></thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<a class="adminlink" id="adminLink">دخول المشرف</a>
+<p class="small" style="text-align:center">NUZI × MATTHEW · Exam Arena</p></div>
+
 <script>
-const QUESTIONS = [
-{l:0,t:'mc',q:'ما البرهان الذي يعتمد على أن الكون له بداية وكل مخلوق يحتاج إلى خالق؟',o:['برهان السببية ووجود الكون','الضمير فقط','القانون الأخلاقي فقط','العادات الاجتماعية'],a:0,e:'يعرض الدرس أن الكون له بداية، وأن كل مخلوق يحتاج إلى خالق.'},
-{l:0,t:'mc',q:'ماذا يوضح انتظام الليل والنهار ودقة ظروف الحياة على الأرض؟',o:['دقة النظام في الكون','أن الكون بلا نظام','أن الحياة لا تحتاج إلى شروط','أن الشمس لا تؤثر في الحياة'],a:0,e:'يستشهد الدرس بدقة نظام الكون وملاءمة الظروف للحياة.'},
-{l:0,t:'mc',q:'أي آية ذهبية وردت في الدرس الأول؟',o:['السماوات تحدث بمجد الله، والفلك يخبر بعمل يديه','ينبغي أن يطاع الله أكثر من الناس','كل شيء عريان ومكشوف','أنا هو الطريق والحق والحياة'],a:0,e:'وردت الآية من مزمور 19: 1 في درس وجود الله.'},
-{l:0,t:'mc',q:'أي مما يلي ذكره الدرس مثالًا على دقة نظام الأرض؟',o:['ميل الأرض الذي يسبب الفصول الأربعة','اختفاء الجاذبية','توقف حركة الأرض','عدم وجود غلاف جوي'],a:0,e:'ذكر الدرس ميل الأرض والفصول الأربعة ضمن أمثلة النظام الدقيق.'},
-{l:0,t:'mc',q:'إلى ماذا يقود التأمل في جمال الكون ونظامه وفق الدرس؟',o:['التفكير في وجود الخالق','إنكار كل ما نراه','التوقف عن طرح الأسئلة','الاعتماد على التخمين فقط'],a:0,e:'يربط الدرس بين التأمل في الكون والإيمان بوجود الله.'},
-{l:1,t:'mc',q:'بماذا يبدأ قانون الإيمان بحسب نص الكتاب؟',o:['بالحقيقة نؤمن بإله واحد','نؤمن بكنيسة واحدة فقط','ننتظر قيامة الأموات فقط','ينبغي أن يطاع الله'],a:0,e:'افتتاح قانون الإيمان هو: «بالحقيقة نؤمن بإله واحد…».'},
-{l:1,t:'mc',q:'أي وصف ورد في قانون الإيمان عن الابن؟',o:['نور من نور، إله حق من إله حق','مخلوق بعد كل الدهور','جزء من الخليقة','نبي من الأنبياء فقط'],a:0,e:'هذا التعبير وارد نصًا في قانون الإيمان بالكتاب.'},
-{l:1,t:'mc',q:'ما الصفات الأربع للكنيسة كما وردت في قانون الإيمان؟',o:['واحدة مقدسة جامعة رسولية','قديمة وقوية وغنية وكبيرة','صغيرة وهادئة وبعيدة','متعددة ومتفرقة ومختلفة'],a:0,e:'النص يقول: «وبكنيسة واحدة مقدسة جامعة رسولية».'},
-{l:1,t:'mc',q:'أي آية ذهبية ترتبط بمعرفة الحق؟',o:['وتعرفون الحق، والحق يحرركم','السماوات تحدث بمجد الله','أنا اخترتكم وأقمتكم','ينبغي أن يطاع الله'],a:0,e:'وردت الآية من يوحنا 8: 32 ضمن الآيات الذهبية.'},
-{l:1,t:'fill',q:'أكمل من قانون الإيمان: «بالحقيقة نؤمن بـ ______ واحد».',o:['إله','نبي','ملاك','رسول'],a:0,e:'النص: «بالحقيقة نؤمن بإله واحد…».'},
-{l:1,t:'fill',q:'أكمل: «خالق السماء و______، ما يُرى وما لا يُرى».',o:['الأرض','البحر','الإنسان','النجوم'],a:0,e:'النص يقول: «خالق السماء والأرض، ما يُرى وما لا يُرى».'},
-{l:1,t:'fill',q:'أكمل: «نؤمن برب واحد يسوع المسيح، ابن الله ______».',o:['الوحيد','الأول','الصغير','المختار'],a:0,e:'النص: «ابن الله الوحيد، المولود من الآب قبل كل الدهور».'},
-{l:1,t:'fill',q:'أكمل من الآية الذهبية: «وتعرفون الحق، والحق ______».',o:['يحرركم','يخفيكم','يترككم','ينساكم'],a:0,e:'يوحنا 8: 32: «وتعرفون الحق، والحق يحرركم».'},
-{l:1,t:'fill',q:'أكمل الآية: «ينبغي أن يطاع الله أكثر من ______».',o:['الناس','الملائكة','الأنبياء','التلاميذ'],a:0,e:'أعمال الرسل 5: 29: «ينبغي أن يطاع الله أكثر من الناس».'},
-{l:1,t:'fill',q:'أكمل: «وننتظر قيامة الأموات وحياة الدهر ______».',o:['الآتي','الماضي','الحاضر','القريب'],a:0,e:'ختام قانون الإيمان: «وننتظر قيامة الأموات وحياة الدهر الآتي. آمين».'},
-{l:2,t:'mc',q:'ما المقصود بالوحي الإلهي في موضوع الدرس؟',o:['أن الله أوصل رسالته بإرشاد الروح القدس','أن الإنسان اخترع كلمة الله','أن الكتاب مجرد آراء بشرية بلا إرشاد','أن كل كاتب كتب من دون أي إرشاد'],a:0,e:'الدرس يوضح أن القديسين تكلموا مسوقين من الروح القدس.'},
-{l:2,t:'mc',q:'بحسب الآية الواردة في الدرس، كيف تكلم قديسو الله؟',o:['مسوقين من الروح القدس','بمشيئة الإنسان وحده','دون رسالة','بالصدفة'],a:0,e:'الآية: «تكلم أناس الله القديسون مسوقين من الروح القدس» (2 بط 1: 21).'},
-{l:2,t:'mc',q:'أي عبارة من الآيات الذهبية وردت في درس الوحي الإلهي؟',o:['كل الكتاب هو موحى به من الله','الكون لا بداية له','الطاعة لا تهم','الكنيسة بلا صفات'],a:0,e:'وردت الآية من 2 تيموثاوس 3: 16 في درس المحفوظات، واستُخدمت في سياق فهم كلمة الله.'},
-{l:2,t:'mc',q:'ما الذي يساعدنا عليه الكتاب المقدس بحسب الآية المذكورة؟',o:['التعليم والتوبيخ والتقويم والتأديب الذي في البر','الترفيه فقط','معرفة العلوم فقط','تجنب التعلم'],a:0,e:'هذه الوظائف مذكورة في 2 تيموثاوس 3: 16.'},
-{l:2,t:'infer',q:'إذا اختلف شخصان في فهم فقرة من الكتاب المقدس، فما التصرف الأقرب لروح الدرس؟',o:['قراءة السياق وفهم المعنى والاستعانة بشرح موثوق','اختراع معنى يناسب كل شخص','ترك القراءة نهائيًا','نقل الكلام دون فهم'],a:0,e:'الدرس يشجع على فهم الوحي الإلهي وكلمة الله، لا على اختراع المعاني.'},
-{l:3,t:'mc',q:'ما المهنة الأصلية للأخوين أندراوس وسمعان بطرس؟',o:['صيد السمك','الزراعة','التجارة','الرعي'],a:0,e:'ذكر الكتاب أن أندراوس وسمعان بطرس كانا يعملان في صيد السمك.'},
-{l:3,t:'mc',q:'من كان أندراوس يتبعه قبل أن يتبع السيد المسيح؟',o:['يوحنا المعمدان','موسى النبي','إيليا','إشعياء'],a:0,e:'تذكر أسئلة الدرس أن أندراوس كان تلميذًا ليوحنا المعمدان.'},
-{l:3,t:'mc',q:'ما معنى كلمة «مسيا» كما شرح أندراوس لأخيه سمعان؟',o:['المسيح','المعلم','الصياد','الملك الروماني'],a:0,e:'ورد في أسئلة الدرس أن أندراوس شرح لأخيه أن «مسيا» تعني «المسيح».'},
-{l:3,t:'infer',q:'ما الدرس الذي نتعلمه من دعوة التلاميذ واتباعهم للسيد المسيح؟',o:['الاستجابة للدعوة والخدمة بأمانة','التمسك بالراحة فقط','رفض التعلم من الآخرين','إخفاء الإيمان دائمًا'],a:0,e:'أحداث دعوة التلاميذ تبرز الاستجابة واتباع المسيح والخدمة.'},
-{l:4,t:'mc',q:'في أي مجمع كان للبابا أثناسيوس الرسولي دور بارز في الدفاع عن الإيمان؟',o:['مجمع نيقية','مجمع أفسس','مجمع خلقيدونية','مجمع أورشليم فقط'],a:0,e:'هذا هو محور الدرس الخامس في الوحدة.'},
-{l:4,t:'mc',q:'بماذا اشتهر البابا أثناسيوس الرسولي وفق الدرس؟',o:['حامي الإيمان','كاتب المزامير','باني الفلك','ملك إسرائيل'],a:0,e:'ذكر الكتاب لقب «حامي الإيمان» ضمن ألقاب أثناسيوس.'},
-{l:4,t:'infer',q:'ما الصفة التي تظهر عندما يتمسك أثناسيوس بالإيمان رغم الضغوط والنفي؟',o:['الثبات والشجاعة','التردد والتخلي','اللامبالاة','حب الشهرة فقط'],a:0,e:'الدرس يبرز شجاعته وثباته وتمسكه بالإيمان المستقيم.'},
-{l:5,t:'mc',q:'ما الآية الذهبية التي اختارها الكتاب لدرس الطاعة؟',o:['ينبغي أن يطاع الله أكثر من الناس','السماوات تحدث بمجد الله','الحق يحرركم','كل الكتاب موحى به من الله'],a:0,e:'الآية من أعمال الرسل 5: 29 وهي مرتبطة بموضوع الطاعة.'},
-{l:5,t:'infer',q:'إذا طلب منك صديق أن تفعل شيئًا يخالف إيمانك وقيمك، فما التصرف الأفضل؟',o:['أرفض الخطأ بأدب وأتمسك بما هو صحيح','أوافق حتى لا يغضب','أخفي الأمر وأفعله','أقلد المجموعة دون تفكير'],a:0,e:'الطاعة الحقيقية لا تعني اتباع أي طلب؛ بل طاعة الله والتمسك بالحق.'},
-{l:5,t:'infer',q:'طالب يظهر سلوكًا جيدًا أمام الناس لكنه يكرر الخطأ سرًا. ما الذي يحتاج أن يراجعه؟',o:['أن تكون طاعته حقيقية في السر والعلن','أن يهتم بالمظهر فقط','أن يلوم الآخرين دائمًا','أن يتوقف عن التفكير'],a:0,e:'قصة مارك في الدرس توضح الفرق بين المظهر والسلوك الحقيقي في الخفاء.'}
+const $ = id => document.getElementById(id);
+
+const LESSONS = [
+  "دعوة الله لنا",
+  "استجابة الإنسان لدعوة الله",
+  "الإيمان والعمل"
 ];
-const LESSONS=['العقيدة: وجود الله','المحفوظات: قانون الإيمان والآيات الذهبية','العبادة: الوحي الإلهي – كلمة الله','شخصيات كتابية: تلاميذ السيد المسيح (1)','شخصيات تاريخية: البابا أثناسيوس الرسولي','القيم والأخلاق: الطاعة'];
-const $=id=>document.getElementById(id);let student={},idx=0,answers=Array(QUESTIONS.length).fill(null),finished=false,client=null,lastResultId=null;
-function initSupabase(){const c=window.EXAM_CONFIG||{};if(c.SUPABASE_URL?.startsWith('http')&&c.SUPABASE_ANON_KEY?.length>20&&window.supabase)client=window.supabase.createClient(c.SUPABASE_URL,c.SUPABASE_ANON_KEY)}
-function show(id){['home','student','quiz','result','admin'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo({top:0,behavior:'smooth'})}
-$('beginBtn').onclick=()=>show('student');$('navBegin').onclick=e=>{e.preventDefault();show('student')};$('studentForm').onsubmit=e=>{e.preventDefault();student={name:$('studentName').value.trim(),class:$('studentClass').value.trim(),code:$('studentCode').value.trim()};if(!student.name||!student.class)return;idx=0;answers=Array(QUESTIONS.length).fill(null);finished=false;show('quiz');drawQuestion()};
-function drawQuestion(){let q=QUESTIONS[idx];$('counter').textContent=`السؤال ${idx+1} من ${QUESTIONS.length}`;$('progressBar').style.width=`${(idx+1)/QUESTIONS.length*100}%`;let type=q.t==='fill'?'أكمل المحفوظات':q.t==='infer'?'فهم واستنتاج':'اختيار من متعدد';$('quizLabel').textContent=`${LESSONS[q.l]} · ${type}`;$('questionArea').innerHTML=`<div class="qtitle">${idx+1}. ${q.q}</div><div class="opts">${q.o.map((v,i)=>`<button class="option ${answers[idx]===i?'chosen':''}" data-opt="${i}">${['أ','ب','ج','د'][i]}. ${v}</button>`).join('')}</div>`;document.querySelectorAll('[data-opt]').forEach(b=>b.onclick=()=>{answers[idx]=Number(b.dataset.opt);drawQuestion()});$('prevBtn').disabled=idx===0;$('nextBtn').disabled=answers[idx]===null;$('nextBtn').textContent=idx===QUESTIONS.length-1?'إنهاء الامتحان':'السؤال التالي';}
-$('prevBtn').onclick=()=>{if(idx>0){idx--;drawQuestion()}};$('nextBtn').onclick=()=>{if(answers[idx]===null)return;if(idx<QUESTIONS.length-1){idx++;drawQuestion()}else if(confirm('متأكد إنك عايز تنهي الامتحان وتشوف النتيجة؟'))finishExam()};
-async function finishExam(){finished=true;const score=QUESTIONS.reduce((n,q,i)=>n+(answers[i]===q.a?1:0),0);show('result');$('scoreText').textContent=`${score} / ${QUESTIONS.length}`;const pct=Math.round(score/QUESTIONS.length*100);$('resultSummary').textContent=`${student.name} · ${student.class} · نتيجتك ${pct}%`;const pass=score>=21;$('certificate').classList.toggle('hidden',!pass);if(pass){$('certName').textContent=student.name;$('certScore').textContent=`${score} من ${QUESTIONS.length} (${pct}%)`;$('certDate').textContent=new Date().toLocaleDateString('ar-EG',{year:'numeric',month:'long',day:'numeric'})}await saveResult(score,pct);}
-async function saveResult(score,pct){let wrong=QUESTIONS.map((q,i)=>({question:q.q,lesson:LESSONS[q.l],chosen:answers[i]===null?'لم تتم الإجابة':q.o[answers[i]],correct:q.o[q.a],explanation:q.e})).filter((x,i)=>answers[i]!==QUESTIONS[i].a);const payload={student_name:student.name,student_class:student.class,student_code:student.code||null,score,total:QUESTIONS.length,percentage:pct,passed:score>=21,answers:QUESTIONS.map((q,i)=>({question:q.q,lesson:LESSONS[q.l],selected:answers[i]===null?null:q.o[answers[i]],correct:q.o[q.a],is_correct:answers[i]===q.a})),mistakes:wrong};if(!client){$('saveStatus').className='status error';$('saveStatus').textContent='الامتحان اتصحح، لكن الحفظ المركزي لم يُفعّل بعد. يلزم ربط بيانات Supabase في ملف الإعدادات ثم تنفيذ إعداد قاعدة البيانات.';return}try{const {data,error}=await client.from('exam_results').insert(payload).select('id').single();if(error)throw error;lastResultId=data.id;$('saveStatus').className='status good';$('saveStatus').textContent='تم حفظ النتيجة بنجاح.';}catch(err){console.error(err);$('saveStatus').className='status error';$('saveStatus').textContent='تعذر حفظ النتيجة على قاعدة البيانات. تأكد من إعداد Supabase وسياسات الأمان. نتيجتك ظاهرة هنا، لكن لم يتم تأكيد حفظها.'}}
-$('reviewBtn').onclick=()=>{$('reviewArea').classList.toggle('hidden');$('reviewList').innerHTML=QUESTIONS.map((q,i)=>`<div class="review-item"><strong>${i+1}. ${q.q}</strong><br><span style="color:${answers[i]===q.a?'var(--green)':'var(--red)'}">إجابتك: ${answers[i]===null?'لم تتم الإجابة':q.o[answers[i]]}</span><br><strong>الإجابة الصحيحة:</strong> ${q.o[q.a]}<br><span class="small">${q.e}</span></div>`).join('');$('reviewBtn').textContent=$('reviewArea').classList.contains('hidden')?'راجع إجاباتك':'إخفاء المراجعة'};$('printBtn').onclick=()=>window.print();$('newExamBtn').onclick=()=>{student={};answers=Array(QUESTIONS.length).fill(null);$('studentForm').reset();$('reviewArea').classList.add('hidden');show('home')};
-$('adminLink').onclick=()=>{show('admin');initSupabase()};$('backHome').onclick=()=>show('home');$('loginForm').onsubmit=async e=>{e.preventDefault();initSupabase();if(!client){adminMsg('Supabase غير مربوط بعد. أكمل إعداد supabase-config.js.','error');return}const {data,error}=await client.auth.signInWithPassword({email:$('adminEmail').value,password:$('adminPassword').value});if(error){adminMsg('فشل تسجيل الدخول: '+error.message,'error');return}adminMsg('تم تسجيل الدخول. جارٍ تحميل النتائج…','good');await loadResults()};function adminMsg(msg,type){$('adminMessage').className='status '+(type||'');$('adminMessage').textContent=msg;$('adminMessage').classList.remove('hidden')}
-async function loadResults(){const {data,error}=await client.from('exam_results').select('id,student_name,student_class,score,total,percentage,passed,created_at,mistakes').order('created_at',{ascending:false}).limit(300);if(error){adminMsg('لم أستطع قراءة النتائج. تأكد أن حسابك مضاف كمشرف في جدول admin_users. '+error.message,'error');return}$('adminContent').classList.remove('hidden');$('resultCount').textContent=`عدد النتائج المعروضة: ${data.length}`;$('resultsBody').innerHTML=data.map(r=>`<tr><td>${esc(r.student_name)}</td><td>${esc(r.student_class)}</td><td>${r.score}/${r.total} (${r.percentage}%)</td><td>${new Date(r.created_at).toLocaleString('ar-EG')}</td><td>${(r.mistakes||[]).length?`<details><summary>عرض ${(r.mistakes||[]).length} أخطاء</summary>${(r.mistakes||[]).map(m=>`<p><b>${esc(m.question)}</b><br>إجابته: ${esc(m.chosen)}<br>الصحيح: ${esc(m.correct)}<br>${esc(m.explanation)}</p>`).join('')}</details>`:'لا توجد'}</td></tr>`).join('');adminMsg('تم تحميل النتائج.','good')};function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}$('refreshResults').onclick=loadResults;$('logoutBtn').onclick=async()=>{await client.auth.signOut();$('adminContent').classList.add('hidden');adminMsg('تم تسجيل الخروج.','good')};initSupabase();
-</script></body></html>
+
+const QUESTIONS = [
+ {l:0,q:"ما الفكرة الأساسية التي تعبّر عنها دعوة الله للإنسان؟",o:["الابتعاد عن الآخرين","الدخول في علاقة مع الله والاستجابة لمحبته","الاعتماد على القوة البشرية وحدها","الاهتمام بالمظاهر فقط"],a:1,e:"دعوة الله تقوم على محبته للإنسان ودعوته إلى علاقة حقيقية معه."},
+ {l:0,q:"أيّ العبارات التالية تعبّر بصورة أدق عن طبيعة دعوة الله؟",o:["دعوة قسرية لا تسمح بالاختيار","دعوة تقوم على المحبة والاستجابة الحرة","دعوة تقتصر على فئة واحدة","دعوة بلا هدف"],a:1,e:"المحبة لا تلغي حرية الإنسان، بل تدعوه إلى الاستجابة."},
+ {l:0,q:"لماذا تُعدّ معرفة الله أساسًا للاستجابة لدعوته؟",o:["لأن المعرفة وحدها تغني عن العمل","لأنها تساعد الإنسان على فهم مشيئته والاستجابة لها","لأنها تمنع الإنسان من اتخاذ القرارات","لأنها تلغي المسؤولية الشخصية"],a:1,e:"معرفة الله تساعد الإنسان على فهم دعوته، لكنها ترتبط بالاستجابة والعمل."},
+ {l:0,q:"أيّ تصرف يتفق مع فهم دعوة الله في الحياة اليومية؟",o:["رفض مساعدة المحتاج","إيذاء الآخرين عند الاختلاف","ممارسة المحبة والرحمة في التعامل","الاهتمام بالنفس فقط"],a:2,e:"المحبة والرحمة من صور الاستجابة العملية لدعوة الله."},
+ {l:0,q:"ما العلاقة الصحيحة بين محبة الله للإنسان ودعوته؟",o:["الدعوة دليل على الاهتمام بالإنسان","الدعوة تعني إلغاء شخصية الإنسان","المحبة تمنع الإنسان من الاختيار","لا توجد علاقة بينهما"],a:0,e:"دعوة الله ترتبط بمحبته واهتمامه بالإنسان."},
+ {l:0,q:"أيّ عبارة لا تتفق مع مفهوم الدعوة الإلهية؟",o:["توجّه الإنسان إلى الخير","تدعوه إلى المحبة","تُلزمه بالتظاهر بالصلاح دون تغيير داخلي","تفتح أمامه طريق الاستجابة"],a:2,e:"الاستجابة الحقيقية ليست مظهرًا خارجيًا فقط، بل تتطلب صدقًا داخليًا."},
+ {l:0,q:"إذا فهم شخص دعوة الله لكنه لم يغيّر سلوكه، فما المشكلة الأساسية؟",o:["أنه لا يحتاج إلى أي تغيير","أن الفهم لم يتحول إلى استجابة عملية","أنه يعرف أكثر من اللازم","أن الدعوة لا ترتبط بالسلوك"],a:1,e:"المعرفة تحتاج إلى استجابة تظهر في السلوك."},
+ {l:0,q:"ما الذي يميّز الاستجابة الناضجة لدعوة الله؟",o:["الخوف من كلام الناس فقط","الاهتمام بالمظاهر","الاختيار الواعي المصحوب بالعمل","رفض النصيحة دائمًا"],a:2,e:"الاستجابة الناضجة تتضمن اختيارًا واعيًا وسلوكًا عمليًا."},
+ {l:0,q:"أكمل: لا يكفي أن يسمع الإنسان الدعوة، بل ينبغي أن...",o:["ينساها بعد سماعها","يستجيب لها في حياته","ينقلها دون أن يفهمها","يؤجلها دائمًا"],a:1,e:"السماع بداية، والاستجابة هي ما يترجم الدعوة إلى واقع."},
+ {l:0,q:"أيّ موقف يوضح أن الدعوة ليست مجرد معلومات؟",o:["حفظ الكلمات دون تطبيقها","معرفة الخير ثم رفضه","تحويل ما تعلّمه الإنسان إلى سلوك صالح","ترديد العبارات دون فهم"],a:2,e:"قيمة المعرفة تظهر في التطبيق العملي."},
+
+ {l:1,q:"ما المقصود بالاستجابة لدعوة الله؟",o:["مجرد سماع كلمات الدعوة","قبول الدعوة والسعي إلى تنفيذها","انتظار الآخرين ليقوموا بكل شيء","الاهتمام بالمعرفة دون سلوك"],a:1,e:"الاستجابة تتضمن القبول والعمل."},
+ {l:1,q:"أيّ من التالي يُعدّ عائقًا أمام الاستجابة الصحيحة؟",o:["التواضع","المحبة","العناد ورفض الحق","مراجعة النفس"],a:2,e:"العناد قد يمنع الإنسان من قبول الحق والتغيير."},
+ {l:1,q:"شخص أخطأ ثم اعترف بخطئه وسعى إلى إصلاحه. ماذا يعكس ذلك؟",o:["ضعف الشخصية دائمًا","استجابة عملية ومسؤولية عن الخطأ","عدم أهمية السلوك","رفض التغيير"],a:1,e:"الاعتراف بالخطأ والعمل على إصلاحه من علامات النضج."},
+ {l:1,q:"أيّ عبارة تعبّر عن مسؤولية الإنسان تجاه دعوة الله؟",o:["الآخرون مسؤولون عن كل اختياراتي","أنا مسؤول عن اختياراتي واستجابتي","لا أثر للاختيارات على الحياة","النية وحدها تكفي مهما كان العمل"],a:1,e:"الإنسان مسؤول عن قراراته وأفعاله."},
+ {l:1,q:"لماذا لا يكفي أن يتكلم الإنسان عن المحبة؟",o:["لأن المحبة لا تظهر في أي فعل","لأن المحبة الحقيقية تظهر في المعاملة والعمل","لأن الكلام ممنوع","لأن العمل لا علاقة له بالمحبة"],a:1,e:"المحبة الصادقة تظهر في السلوك العملي."},
+ {l:1,q:"عندما يواجه الإنسان اختيارًا بين الصواب والمنفعة الشخصية، فإن الاستجابة السليمة تتطلب...",o:["اختيار المنفعة دائمًا","تجاهل المبادئ","التفكير في الصواب وتحمل المسؤولية","تقليد المجموعة دون تفكير"],a:2,e:"الاستجابة الصحيحة تتطلب التمسك بالمبادئ وتحمل المسؤولية."},
+ {l:1,q:"أيّ مثال يوضح استجابة شكلية لا حقيقية؟",o:["مساعدة شخص دون انتظار مقابل","الاعتذار وإصلاح الضرر","إظهار الصلاح أمام الناس مع تعمّد إيذائهم في الخفاء","الاعتراف بالخطأ"],a:2,e:"المظهر وحده لا يعبّر عن استجابة صادقة إذا ناقضه السلوك."},
+ {l:1,q:"ما التصرف الأفضل عند اكتشاف أن قرارًا سابقًا كان خاطئًا؟",o:["الإصرار عليه خوفًا من الاعتراف","إلقاء اللوم على الجميع","مراجعة القرار وتصحيح الخطأ","إخفاء الخطأ مهما كانت نتائجه"],a:2,e:"مراجعة النفس وتصحيح الخطأ مسؤولية مهمة."},
+ {l:1,q:"الاستجابة لدعوة الله علاقة بين...",o:["المعرفة والعمل فقط دون نية","الإيمان والاختيار والعمل","المظهر والشهرة","الخوف ومصلحة الناس"],a:1,e:"الاستجابة ترتبط بالإيمان والاختيار وتظهر في العمل."},
+ {l:1,q:"أيّ تصرف يساعد على الاستجابة السليمة؟",o:["رفض كل نقد","التسرع في الحكم","التواضع ومراجعة النفس","تجنب تحمل المسؤولية"],a:2,e:"التواضع ومراجعة النفس يساعدان على التغيير."},
+
+ {l:2,q:"ما العلاقة الصحيحة بين الإيمان والعمل؟",o:["الإيمان الحقيقي لا يؤثر في السلوك","العمل الصالح يمكن أن يعبّر عن الإيمان","لا علاقة بين الإيمان والسلوك","المظاهر تغني عن الاثنين"],a:1,e:"السلوك الصالح يُظهر أثر الإيمان في حياة الإنسان."},
+ {l:2,q:"شخص يتحدث عن الأمانة لكنه يغش في الامتحان. ما التناقض هنا؟",o:["لا يوجد تناقض","سلوكه لا يتفق مع ما يقوله","الغش دليل على الأمانة","الكلام أهم من العمل"],a:1,e:"ينبغي أن يتفق السلوك مع المبادئ التي يعلنها الإنسان."},
+ {l:2,q:"أيّ مثال يجمع بين الإيمان والعمل؟",o:["معرفة الحق ورفضه","التحدث عن الرحمة دون مساعدة أحد","مساعدة المحتاج بإخلاص","التفاخر بالأعمال أمام الجميع"],a:2,e:"مساعدة المحتاج صورة عملية للمحبة والرحمة."},
+ {l:2,q:"لماذا لا يصح الحكم على صدق الإنسان من كلامه وحده؟",o:["لأن الكلام لا يُسمع","لأن السلوك العملي يكشف مدى التوافق بين القول والفعل","لأن الأفعال لا أهمية لها","لأن كل الناس متشابهون"],a:1,e:"القول وحده لا يكفي للحكم على الاستجابة العملية."},
+ {l:2,q:"ما التصرف الذي يعبّر عن الإخلاص في العمل الصالح؟",o:["العمل فقط للحصول على المديح","العمل بدافع المحبة دون انتظار مقابل","التوقف عندما لا يراك أحد","التفاخر بما فعلته"],a:1,e:"الإخلاص يعني ألا يكون المديح أو المقابل هو الدافع الأساسي."},
+ {l:2,q:"إذا ساعد شخص آخر ثم ذكّره بمساعدته لإذلاله، فما الذي غاب عن تصرفه؟",o:["القدرة على الكلام","الإخلاص واحترام الآخر","المعرفة الدراسية","السرعة"],a:1,e:"العمل الصالح ينبغي ألا يتحول إلى وسيلة لإذلال الآخرين."},
+ {l:2,q:"أيّ استنتاج هو الأدق من العلاقة بين الإيمان والسلوك؟",o:["السلوك لا يكشف شيئًا عن المبادئ","المبادئ الصادقة ينبغي أن تنعكس في السلوك","النية تلغي أهمية الفعل","المظاهر أهم من الحقيقة"],a:1,e:"هناك ارتباط بين المبادئ التي يؤمن بها الإنسان وسلوكه."},
+ {l:2,q:"أكمل: من علامات الاستجابة الصادقة أن يتفق ...",o:["الكلام مع المظهر فقط","القول مع العمل","الرأي مع مصلحة الفرد دائمًا","السلوك مع رأي المجموعة فقط"],a:1,e:"التوافق بين القول والعمل علامة على الصدق."},
+ {l:2,q:"طالب رفض الغش رغم أن أصدقاءه ضغطوا عليه. أيّ صفة ظهرت في موقفه؟",o:["اللامبالاة","التمسك بالمبدأ وتحمل المسؤولية","الرغبة في الشهرة بالضرورة","رفض التعاون"],a:1,e:"التمسك بالصواب أمام الضغط يعكس المسؤولية."},
+ {l:2,q:"ما أفضل طريقة لتقييم استجابة الإنسان لدعوة الخير؟",o:["الاعتماد على كلامه وحده","الاعتماد على مظهره وحده","النظر إلى اختياراته وأعماله ومدى اتساقها مع أقواله","سؤال شخص واحد دون التحقق"],a:2,e:"الأقوال والاختيارات والأعمال معًا تعطي صورة أفضل عن الاستجابة."}
+];
+
+let client = null;
+let student = {};
+let answers = Array(QUESTIONS.length).fill(null);
+let current = 0;
+let lastResultId = null;
+let adminSession = null;
+
+function showOnly(id) {
+  ["home","student","quiz","result","admin"].forEach(x => $(x).classList.toggle("hidden",x!==id));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function initSupabase() {
+  try {
+    const cfg = window.NUZI_SUPABASE_CONFIG || window.SUPABASE_CONFIG || {};
+    const url = cfg.url || cfg.supabaseUrl || window.SUPABASE_URL;
+    const key = cfg.anonKey || cfg.anon || cfg.key || window.SUPABASE_ANON_KEY;
+    if(url && key && window.supabase) {
+      client = window.supabase.createClient(url,key);
+    }
+  } catch(e) {
+    console.error("Supabase initialization failed:",e);
+  }
+}
+initSupabase();
+
+$("beginBtn").addEventListener("click",()=>showOnly("student"));
+
+$("studentForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  student = {
+    name:$("studentName").value.trim(),
+    class:$("studentClass").value.trim(),
+    code:$("studentCode").value.trim()
+  };
+  if(!student.name || !student.class) return;
+  answers = Array(QUESTIONS.length).fill(null);
+  current = 0;
+  renderQuestion();
+  showOnly("quiz");
+});
+
+function renderQuestion() {
+  const q = QUESTIONS[current];
+  $("counter").textContent = `السؤال ${current+1} من ${QUESTIONS.length}`;
+  $("progressBar").style.width = `${((current+1)/QUESTIONS.length)*100}%`;
+  $("questionArea").innerHTML = `
+    <p class="small">${LESSONS[q.l]}</p>
+    <div class="qtitle">${current+1}. ${q.q}</div>
+    <div class="opts">
+      ${q.o.map((opt,i)=>`
+        <button type="button" class="option ${answers[current]===i?"chosen":""}" data-answer="${i}">
+          ${["أ","ب","ج","د"][i]}. ${opt}
+        </button>`).join("")}
+    </div>`;
+  $("questionArea").querySelectorAll("[data-answer]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      answers[current] = Number(btn.dataset.answer);
+      renderQuestion();
+    });
+  });
+  $("prevBtn").disabled = current===0;
+  $("nextBtn").disabled = answers[current]===null;
+  $("nextBtn").textContent = current===QUESTIONS.length-1 ? "إنهاء الامتحان ✓" : "السؤال التالي ←";
+}
+
+$("prevBtn").addEventListener("click",()=>{
+  if(current>0){current--;renderQuestion();}
+});
+$("nextBtn").addEventListener("click",()=>{
+  if(answers[current]===null)return;
+  if(current<QUESTIONS.length-1){current++;renderQuestion();}
+  else finishExam();
+});
+
+async function finishExam() {
+  $("nextBtn").disabled = true;
+  const score = QUESTIONS.reduce((sum,q,i)=>sum+(answers[i]===q.a?1:0),0);
+  const pct = Math.round(score/QUESTIONS.length*100);
+  $("scoreText").textContent = `${score} / ${QUESTIONS.length}`;
+  $("resultSummary").textContent = `يا ${student.name}، نتيجتك ${pct}%. ${score>=21?"أحسنت! حققت درجة الاجتياز.":"استمر في المراجعة وحاول مرة أخرى."}`;
+  $("certName").textContent = student.name;
+  $("certScore").textContent = `${score} من ${QUESTIONS.length}`;
+  $("certDate").textContent = new Date().toLocaleDateString("ar-EG");
+  $("certificate").classList.toggle("hidden",score<21);
+  $("reviewArea").classList.add("hidden");
+  showOnly("result");
+  await saveResult(score,pct);
+  $("nextBtn").disabled = false;
+}
+
+async function saveResult(score,pct) {
+  const wrong = QUESTIONS.map((q,i)=>({
+    question:q.q,
+    lesson:LESSONS[q.l],
+    chosen:answers[i]===null?"لم تتم الإجابة":q.o[answers[i]],
+    correct:q.o[q.a],
+    explanation:q.e
+  })).filter((x,i)=>answers[i]!==QUESTIONS[i].a);
+
+  const payload = {
+    student_name:student.name,
+    student_class:student.class,
+    student_code:student.code || null,
+    score:score,
+    total:QUESTIONS.length,
+    percentage:pct,
+    passed:score>=21,
+    answers:QUESTIONS.map((q,i)=>({
+      question:q.q,
+      lesson:LESSONS[q.l],
+      selected:answers[i]===null?null:q.o[answers[i]],
+      correct:q.o[q.a],
+      is_correct:answers[i]===q.a
+    })),
+    mistakes:wrong
+  };
+
+  if(!client) {
+    $("saveStatus").className="status error";
+    $("saveStatus").textContent="لم يتم الحفظ: تعذّر الاتصال بإعدادات Supabase. راجع ملف supabase-config.js.";
+    console.error("Supabase client not initialized.");
+    return;
+  }
+
+  $("saveStatus").className="status";
+  $("saveStatus").textContent="جاري حفظ النتيجة…";
+
+  try {
+    // لا نطلب SELECT بعد INSERT حتى لا نحتاج صلاحية قراءة عامة.
+    const {error} = await client.from("exam_results").insert(payload);
+    if(error) throw error;
+
+    $("saveStatus").className="status good";
+    $("saveStatus").textContent="تم إرسال النتيجة إلى قاعدة البيانات بنجاح.";
+  } catch(err) {
+    console.error("Save result error:",err);
+    $("saveStatus").className="status error";
+    $("saveStatus").textContent="فشل حفظ النتيجة: "+(err.message || String(err));
+  }
+}
+
+$("reviewBtn").addEventListener("click",()=>{
+  const list = $("reviewList");
+  list.innerHTML = QUESTIONS.map((q,i)=>{
+    const ok = answers[i]===q.a;
+    const chosen = answers[i]===null?"لم تتم الإجابة":q.o[answers[i]];
+    return `<div class="review-item">
+      <strong>${i+1}. ${q.q}</strong><br>
+      <span style="color:${ok?"#42c98b":"#ff6d83"}">${ok?"إجابة صحيحة ✓":"إجابة غير صحيحة ✗"}</span><br>
+      إجابتك: ${chosen}<br>
+      الإجابة الصحيحة: ${q.o[q.a]}<br>
+      <span class="small">التوضيح: ${q.e}</span>
+    </div>`;
+  }).join("");
+  $("reviewArea").classList.remove("hidden");
+  $("reviewArea").scrollIntoView({behavior:"smooth"});
+});
+
+$("printBtn").addEventListener("click",()=>{
+  if(!$("certificate").classList.contains("hidden")) window.print();
+  else alert("شهادة الاجتياز متاحة عند الحصول على 21 درجة على الأقل.");
+});
+
+$("newExamBtn").addEventListener("click",()=>{
+  student={};
+  answers=Array(QUESTIONS.length).fill(null);
+  current=0;
+  $("studentForm").reset();
+  showOnly("home");
+});
+
+$("adminLink").addEventListener("click",()=>{
+  showOnly("admin");
+  $("adminContent").classList.add("hidden");
+  $("adminMessage").classList.add("hidden");
+});
+$("backHome").addEventListener("click",()=>showOnly("home"));
+
+$("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(!client) {
+    showAdminMessage("إعدادات Supabase غير مكتملة.","error");
+    return;
+  }
+  const email=$("adminEmail").value.trim();
+  const password=$("adminPassword").value;
+  const cfg=window.NUZI_SUPABASE_CONFIG || window.SUPABASE_CONFIG || {};
+  const configuredEmail=cfg.adminEmail || "";
+  if(configuredEmail && email.toLowerCase()!==configuredEmail.toLowerCase()) {
+    showAdminMessage("هذا البريد غير مسموح له بدخول لوحة النتائج.","error");
+    return;
+  }
+  try {
+    const {data,error}=await client.auth.signInWithPassword({email,password});
+    if(error)throw error;
+    adminSession=data.session;
+    $("adminContent").classList.remove("hidden");
+    showAdminMessage("تم تسجيل الدخول.","good");
+    await loadResults();
+  } catch(err) {
+    console.error(err);
+    showAdminMessage("تعذّر تسجيل الدخول: "+(err.message || String(err)),"error");
+  }
+});
+
+function showAdminMessage(message,type) {
+  $("adminMessage").textContent=message;
+  $("adminMessage").className="status "+type;
+  $("adminMessage").classList.remove("hidden");
+}
+
+async function loadResults() {
+  if(!client || !adminSession) return;
+  $("resultsBody").innerHTML="<tr><td colspan='4'>جاري تحميل النتائج…</td></tr>";
+  try {
+    const {data,error}=await client.from("exam_results")
+      .select("student_name,student_class,score,total,created_at")
+      .order("created_at",{ascending:false})
+      .limit(200);
+    if(error)throw error;
+    $("resultsBody").innerHTML=(data||[]).map(r=>`
+      <tr>
+        <td>${escapeHtml(r.student_name)}</td>
+        <td>${escapeHtml(r.student_class)}</td>
+        <td>${r.score} / ${r.total}</td>
+        <td>${r.created_at?new Date(r.created_at).toLocaleString("ar-EG"):"—"}</td>
+      </tr>`).join("") || "<tr><td colspan='4'>لا توجد نتائج محفوظة.</td></tr>";
+    $("resultCount").textContent=`عدد النتائج المعروضة: ${(data||[]).length}`;
+  } catch(err) {
+    console.error(err);
+    $("resultsBody").innerHTML="<tr><td colspan='4'>تعذّر تحميل النتائج. راجع صلاحيات حساب المشرف وسياسات قاعدة البيانات.</td></tr>";
+  }
+}
+
+function escapeHtml(value) {
+  return String(value??"").replace(/[&<>"']/g,ch=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[ch]);
+}
+
+$("refreshResults").addEventListener("click",loadResults);
+
+$("logoutBtn").addEventListener("click",async()=>{
+  try {if(client) await client.auth.signOut();}catch(e){console.error(e);}
+  adminSession=null;
+  $("adminContent").classList.add("hidden");
+  $("loginForm").reset();
+  showAdminMessage("تم تسجيل الخروج.","good");
+});
+
+</script>
+</body>
+</html>
